@@ -1,0 +1,38 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual environments
+.env
+.venv/
+venv/
+ENV/
+
+# =========================
+# IDEs / Editores
+# =========================
+.spyproject/
+.vscode/
+.idea/
+
+# =========================
+# Sistema
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Dados
+# =========================
+
+# Arquivos temporários / grandes
+*.tmp
+*.log
+*.bak
