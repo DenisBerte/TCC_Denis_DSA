@@ -1,15 +1,16 @@
 
 # Candidaturas religiosas e de segurança nas eleições brasileiras para deputados (2014–2022)
 
-Este repositório contém os scripts, dados brutos, processados e materiais do meu Trabalho de Conclusão de Curso (TCC) em Data Science e Analytics (ESALQ) que investiga se candidatos a deputados estaduais e federais que utilizaram **nomes de urna** ou tinham **ocupação ligada à religião ou à segurança pública** apresentaram maior probabilidade de eleição.
-
+Este repositório contém os scripts, dados brutos, processados e materiais do meu Trabalho de Conclusão de Curso (TCC) em Data Science e Analytics (ESALQ).
 ---
 
 ## Resumo do projeto
 
+Título: Candidaturas religiosas e de segurança nas eleições brasileiras para deputados (2014-2022): investigando a probabilidade de ser eleito(a)
+
 Muitos candidatos a cargos políticos utilizam como nome de urna termos que servem como dicas, com as quais esperam influenciar o comportamento de voto do eleitorado. A partir da última década, cresce a atenção voltada a candidaturas políticas ligadas ao campo religioso e da segurança pública no Brasil.  
 
-O objetivo geral deste estudo foi verificar se os candidatos a deputados estaduais e federais que utilizaram nomes de urna ou tinham ocupação nessas áreas no ano da eleição tiveram maior probabilidade de eleição. A questão principal foi: **utilizar nome de urna e/ou ter ocupação religiosa ou de segurança aumenta a chance de o candidato ser eleito deputado?**  
+A questão principal foi: **ser candidato com identidade religiosa ou da segurança tem efeito sobre a probabilidade de eleição de deputados federais ou estaduais?**  
 
 Além disso, o estudo comparou duas técnicas de análise:  
 - **Random Forest (RF)**, um método de aprendizado de máquina não paramétrico.  
@@ -17,7 +18,7 @@ Além disso, o estudo comparou duas técnicas de análise:
 
 Para ambos os modelos foram utilizados dados das eleições de **2014 e 2018** (treino) e **2022** (teste), mantendo separados os candidatos a deputados estaduais e federais.  
 
-Os resultados mostraram a **baixa capacidade explicativa isolada** das variáveis “religioso” e “segurança” sobre o resultado eleitoral nos anos analisados. Ainda assim, o desempenho dos modelos foi bastante semelhante, com **vantagem marginal do Random Forest** sobre a regressão logística binária.  
+Os resultados mostraram **efeitos fracos ou moderados** das variáveis “religioso” e “segurança” sobre o resultado eleitoral nos anos analisados. Ainda assim, o desempenho dos modelos foi bastante semelhante, com **vantagem marginal do Random Forest** sobre a regressão logística binária.  
 
 **Palavras-chave:** eleição de deputados; nome de urna; ocupação; candidato religioso; candidato segurança.
 
