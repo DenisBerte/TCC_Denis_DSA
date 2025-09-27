@@ -5,7 +5,7 @@ Created on Sat Aug 30 17:37:15 2025
 @author: denis
 """
 
-#%%  funções de ajuda (atualizadas com mudanças mínimas)
+#%%  funções de ajuda 
 
 import pandas as pd
 from sklearn.metrics import accuracy_score, classification_report, \
@@ -47,7 +47,6 @@ def descritiva(df_, var, vresp='DS_SIT_TOT_TURNO', max_classes=5):
     ax1.set_ylabel('Taxa do evento')
 
     ax2 = ax1.twinx()
-    # hue=var é redundante; barras simples evitam duplicidade visual
     sns.countplot(data=df, x=var, palette='viridis', alpha=0.5, ax=ax2)
     ax2.set_ylabel('Frequência', color='blue')
     ax2.tick_params(axis='y', labelcolor='blue')

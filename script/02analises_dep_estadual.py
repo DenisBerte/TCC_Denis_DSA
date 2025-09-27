@@ -515,8 +515,7 @@ plt.show()
 
 #%% FIM da RF - base estadual
 
-#%% Reg Log Bin - estadual (treino/teste), GLM com balanceamento e sem stepwise
-
+#%% Reg Log Bin - estadual (treino/teste), GLM com balanceamento 
 #%% Importação dos pacotes
 import pandas as pd
 import numpy as np
@@ -544,7 +543,7 @@ def limpar_nomes_colunas(colunas):
 
 df_estad.columns = limpar_nomes_colunas(df_estad.columns)
 
-#%% Separação treino e teste (mesma lógica: treino=2014+2018 | teste=2022)
+#%% Separação treino e teste (treino=2014+2018 | teste=2022)
 df_train = df_estad[df_estad['ANO_ELEICAO'].isin([2014, 2018])].copy()
 df_test  = df_estad[df_estad['ANO_ELEICAO'] == 2022].copy()
 
@@ -598,11 +597,11 @@ summary_df.to_excel("resultado_glm_est.xlsx", index=True)
 
 #%% Tabela sintética (apenas variáveis significantes)
 
-# summary_df já existe do bloco anterior
+# summary_df 
 tabela = summary_df.copy()
 tabela = tabela.rename_axis('Variavel').reset_index()
 
-# garante OR (caso não tenha sido calculado acima)
+# garante OR 
 if 'OR' not in tabela.columns:
     tabela['OR'] = np.exp(tabela['Coef.'])
 
@@ -771,8 +770,7 @@ plt.legend(['Sensitividade', 'Especificidade'], fontsize=20)
 plt.title('Sensitividade/Especificidade por Cutoff - Teste 2022 (Estadual)')
 plt.show()
 
-#%% fim da reg log bin (treino 2014+2018 / teste 2022) com GLM balanceado e sem stepwise — ESTADUAL
-
+#%% fim da reg log bin (treino 2014+2018 / teste 2022) com GLM balanceado 
 #%% grafico de odds
 
 #%% Importar pacotes

@@ -515,8 +515,7 @@ plt.show()
 
 #%% FIM da RF - base federal
 
-#%% Reg Log Bin - federal (treino/teste), GLM com balanceamento e sem stepwise
-
+#%% Reg Log Bin - federal (treino/teste), GLM com balanceamento 
 #%% Importação dos pacotes
 import pandas as pd
 import numpy as np
@@ -530,7 +529,7 @@ warnings.filterwarnings('ignore')
 df_fed = pd.read_excel("df_fed.xlsx")
 df_fed.info()
 
-#%% Limpeza dos nomes (mantido do seu padrão)
+#%% Limpeza dos nomes 
 import unidecode
 def limpar_nomes_colunas(colunas):
     colunas_novas = []
@@ -544,11 +543,11 @@ def limpar_nomes_colunas(colunas):
 
 df_fed.columns = limpar_nomes_colunas(df_fed.columns)
 
-#%% Separação treino e teste (mesma lógica do original)
+#%% Separação treino e teste 
 df_train = df_fed[df_fed['ANO_ELEICAO'].isin([2014, 2018])].copy()
 df_test  = df_fed[df_fed['ANO_ELEICAO'] == 2022].copy()
 
-#%% Definição do conjunto de variáveis (sem stepwise: usa todas as preditoras)
+#%% Definição do conjunto de variáveis 
 cols_pred = [c for c in df_train.columns if c not in ['DS_SIT_TOT_TURNO', 'ANO_ELEICAO']]
 
 #%% Ajuste do modelo GLM com pesos balanceados (na base de treino)
@@ -600,7 +599,7 @@ summary_df.to_excel("resultado_glm_fed.xlsx", index=True)
 tabela = summary_df.copy()
 tabela = tabela.rename_axis('Variavel').reset_index()
 
-# garante OR (caso não tenha sido calculado acima)
+# garante OR
 if 'OR' not in tabela.columns:
     tabela['OR'] = np.exp(tabela['Coef.'])
 
@@ -769,7 +768,7 @@ plt.legend(['Sensitividade', 'Especificidade'], fontsize=20)
 plt.title('Sensitividade/Especificidade por Cutoff - Teste 2022')
 plt.show()
 
-#%% fim da reg log bin (treino 2014+2018 / teste 2022) com GLM balanceado e sem stepwise
+#%% fim da reg log bin (treino 2014+2018 / teste 2022) com GLM balanceado 
 
 #%% grafico de odds
 
